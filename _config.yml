@@ -4,7 +4,9 @@
 
 # Site
 title: Andy的博客
-subtitle: 我祈祷，会更好  I stay,I pray,maybe better
+subtitle: |
+    ------- 我祈祷，会更好 -------
+    I stay,I pray,maybe better
 description: 吉林大学计算机学院10级，现就职于快手科技任前端，苦苦前行的一枚程序猿。
 author: Andy
 email: andysongsca@gmail.com
@@ -82,27 +84,27 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-# plugins:
-#  - hexo-generator-feed
+plugins:
+#   - hexo-generator-feed
 #  - hexo-generator-baidu-sitemap
-#  - hexo-generator-sitemap
+# - hexo-generator-sitemap
 
 theme: yilia
 exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
-deploy:
- type: git
- repository: git@github.com:yaomo/andy-blog.git
- branch: master
+#deploy:
+#  type: git
+#  repository: git@github.com:yaomo/andy-blog.git
+#  branch: master
 
-# deploy:
-#   type: rsync
-#   host: 120.24.181.238
-#   user: root
-#   root: /usr/local/nginx/
-#   port: 22
+deploy:
+  type: rsync
+  host: 39.106.58.106
+  user: root
+  root: /root/web/andy-blog
+  port: 22
 
 sitemap:
     path: sitemap.xml
