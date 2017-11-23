@@ -1,10 +1,18 @@
 <% var defaultBg = '#4d4d4d'; %>
-<div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"></div>
+<div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>">
+    <!-- <embed src="//music.163.com/style/swf/widget.swf?sid=26412092&type=2&auto=1&width=320&height=66" width="340" height="86"  allowNetworking="all"></embed> -->
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="<%=theme.root%>" class="profilepic">
+      <style>
+        .left-col #header .profilepic img.js-avatar:hover {transform: rotate3d(0, 0, 1, 360deg);
+        transition: all 1.5s;}
+        .left-col #header .profilepic img.js-avatar {transition: all 1s;}
+      </style>
 			<img src="<%=theme.avatar%>" class="js-avatar">
-		</a>
+    </a>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=231 height=52 src="//music.163.com/outchain/player?type=2&id=26412092&auto=0&height=32"></iframe>
 		<hgroup>
 		  <h1 class="header-author"><a href="<%=theme.root%>"><%=theme.author%></a></h1>
 		</hgroup>
@@ -33,5 +41,5 @@
 		        <%}%>
 			</div>
 		</nav>
-	</header>		
+	</header>
 </div>

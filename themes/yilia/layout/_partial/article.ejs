@@ -8,6 +8,12 @@
         <% } %>
       </header>
     <% } %>
+    <% if (!index){ %>
+      <div style="float: right; margin: -25px 7.6923% 0 0; font-size: 12px; color: #F2A670;">
+          浏览次数：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+          次
+      </div>
+    <%}%>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
@@ -87,7 +93,7 @@
       url: config.url+url_for(post.path)
     }) %>
   <% } %>
-  
+
   <% if (theme.wangyiyun){ %>
   <%- partial('post/wangyiyun', {
       key: post.slug,
