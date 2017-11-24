@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>//yaomo.github.com/blog/photos/imgList.json</loc>
+    <loc>//blog.andysongsca.com/2017/10/27/%E9%82%A3%E4%BA%9B%E6%89%80%E8%B0%93/</loc>
     
-    <lastmod>2017-10-30T10:09:28.000Z</lastmod>
+    <lastmod>2017-11-23T11:09:17.006Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//blog.andysongsca.com/2017/07/24/hexo%20usage/</loc>
+    
+    <lastmod>2017-11-23T11:09:17.005Z</lastmod>
     
   </url>
   

@@ -1,6 +1,5 @@
 node_modules
-photos
-source/assets/photos
+public
 npm-debug.log
 yarn-error.log
 .nyc_output
