@@ -7,10 +7,10 @@ fs.readdir(path, function (err, files) {
 	    console.log('localerror', err);
         return;
     }
-    let arr = [];
+    const jsonArr = [];
     (function iterator(index) {
         if (index == files.length) {
-            fs.writeFile("../source/photos/imgList.json", JSON.stringify(arr, null, "\t"));
+            fs.writeFile("../source/photos/imgList.json", JSON.stringify(jsonArr, null, "\t"));
             return;
         }
 
@@ -22,7 +22,27 @@ fs.readdir(path, function (err, files) {
                 const nameArr = files[index].split('.');
                 const ext = nameArr[nameArr.length-1].toLowerCase();
                 if (!(files[index].indexOf('.small.') !== -1 || files[index].indexOf('.big.') !== -1) && /jpg|png|jpeg/ig.test(ext)) {
-                    arr.push(files[index].split('.')[0]);
+                    const nameStr = nameArr[0];
+                    const titleArr = nameStr.split('-');
+                    let hasIt = false;
+                    jsonArr.forEach((v, i) => {
+                        if (v.chapter === titleArr[0]) {
+                            jsonArr[i].images.push({
+                                src: nameStr,
+                                desc: titleArr[2]
+                            });
+                            hasIt = true;
+                        }
+                    });
+                    !hasIt && jsonArr.push({
+                        chapter: titleArr[0],
+                        section: titleArr[1],
+                        images: [{
+                            src: nameStr,
+                            desc: titleArr[2]
+                        }]
+                    });
+                
                 }
             }
             iterator(index + 1);

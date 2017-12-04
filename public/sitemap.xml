@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>//blog.andysongsca.com/2017/10/27/%E9%82%A3%E4%BA%9B%E6%89%80%E8%B0%93/</loc>
+    <loc>//blog.andysongsca.com/photos/imgList.json</loc>
     
-    <lastmod>2017-11-23T11:09:17.006Z</lastmod>
+    <lastmod>2017-11-24T10:23:28.718Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>//blog.andysongsca.com/photos/index.html</loc>
+    
+    <lastmod>2017-11-24T06:10:05.317Z</lastmod>
     
   </url>
   

@@ -78,8 +78,8 @@ mobile:
 #wangyiyun: '2dba06fbf8d24c13915ea6c6aa7183b1'
 
 #3、畅言
-# changyan_appid: 'cytiMs5t0'
-# changyan_conf: 'prod_7b4d051aba311a4b913a300bfe115a9c'
+changyan_appid: 'cytiMs5t0'
+changyan_conf: 'prod_7b4d051aba311a4b913a300bfe115a9c'
 
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 # disqus: false
@@ -113,4 +113,4 @@ friends:
   友情链接5: http://localhost:4000/
   友情链接6: http://localhost:4000/
 
-aboutme: Andy<br>学于吉大，曾经去哪，藏身快手<br><br>音乐与游戏<br/>目前是一枚王者<br/><br/>不，是一枚前端<br>我祈祷，会更好
+aboutme: Andy<br>启帆吉大，游向去哪儿，藏身快手<br><br>好音乐与游戏<br/>曾为王者<br/><br/>后倦<br/><br/>退从于前端<br/>搬砖为业<br/><br/>我祈祷，会更好

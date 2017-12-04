@@ -111,55 +111,28 @@
       }
     };
     var render = function render(data) {
-      // var ulTmpl = "";
-      // for (var j = 0, len2 = res.list.length; j < len2; j++) {
-      //   var data = res.list[j].arr;
-      //   var liTmpl = "";
-      //   for (var i = 0, len = data.link.length; i < len; i++) {
-      //     var minSrc = 'http://litten.me/ins-min/' + data.link[i] + '.min.jpg';
-      //     var src = 'http://litten.me/ins/' + data.link[i];
-      //     var type = data.type[i];
-      //     var target = src + (type === 'video' ? '.mp4' : '.jpg');
-      //     src += '.jpg';
-
-      //     liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
-      //           <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
-      //             <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/blog/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
-      //           </a>\
-      //           <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
-      //       </figure>';
-      //   }
-      //   ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '<em>' + data.month + '月</em></h1>\
-      //   <ul class="img-box-ul">' + liTmpl + '</ul>\
-      //   </section>';
-      // }
-      // document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
-      // createVideoIncon();
-      // _view2.default.init();
       var ulTmpl = "";
+      data.forEach(function(k, i) {
         var liTmpl = "";
-        for (var i = 0, len = data.length; i < len; i++) {
-          // var minSrc = '../assets/photos/' + data[i] + '.min.jpg';
-          // var src = '../assets/photos/' + data[i] + '.jpeg';
-          var minSrc = '/static/photos/' + data[i] + '.small.jpg';
-          var src = '/static/photos/' + data[i] + '.big.jpg';
-          var type = '';
-          var target = '';
-          // var type = data.type[i];
-          // var target = src + (type === 'video' ? '.mp4' : '.jpg');
-          // src += '.jpg';
-
+        var imgs = k.images;
+        imgs.forEach(function(v, j) {
+          var minSrc = '/static/photos/' + v.src + '.small.jpg';
+          var src = '/static/photos/' + v.src + '.big.jpg';
+          var desc = v.desc;
+          var type = 'image';
+          var target = src;
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
-                <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '"></a>\
-                  <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/blog/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
-                  <p class="title">曾经的凤凰花开的路口</p>\
-                <figcaption style="display:none" itemprop="caption description">' + '我想对你说,只言片语，道不尽，无限相思' + '</figcaption>\
-            </figure>';
-        }
-        // <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
-        ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + '那年夏天' + '<br/><em>' + '第一幕' + '</em></h1>\
+                        <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
+                          <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+                        </a>\
+                        <p class="title">' + desc + '</p>\
+                        <figcaption style="display:none" itemprop="caption description">' + desc + '</figcaption>\
+                    </figure>';
+        });
+        ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + k.chapter + '<br/><em>' + k.section + '</em></h1>\
         <ul class="img-box-ul">' + liTmpl + '</ul>\
         </section>';
+      });
       document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
       createVideoIncon();
       _view2.default.init();
